@@ -7,7 +7,6 @@
 # University of California - Davis
 # 2012
 ##################################
-use lib "/home/ledwards/Perl_Scripts/";
 use strict; use warnings;
 use Getopt::Std;
 use Data::Dumper;
