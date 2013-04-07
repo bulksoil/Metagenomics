@@ -1,0 +1,56 @@
+#!/usr/bin/perl
+#newperl.pl
+
+my $out = shift @ARGV;
+open FILE, ">$out" or die $!;
+
+print FILE "#!/usr/bin/perl
+#$out
+##################################
+# Written by Joe Edwards
+# Sundaresan Lab
+# Department of Plant Biology
+# University of California - Davis
+# 2012
+##################################
+use lib \"/home/ledwards/Perl_Scripts/\";
+use strict; use warnings;
+use Getopt::Std;
+
+#==============================================================================
+## Get the options from command line
+my \%opts;
+getopts('', \\%opts);
+
+
+#==============================================================================
+## Usage statement
+my \$usage = \"
+$out
+Last Updated: 
+
+Written by Joe Edwards
+PhD Student
+Sundaresan Lab
+Department of Plant Biology
+University of California - Davis
+
+Usage
+$out
+
+Options
+\";
+
+#==============================================================================
+
+
+#==============================================================================
+
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## Subroutines Follow
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\n";
+
+close FILE;
+$status = system("vim $out");
