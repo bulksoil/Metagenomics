@@ -7,6 +7,12 @@
 # University of California - Davis
 # 2012
 ##################################
+
+##################################
+# This script is intended to bin fastq sequences based on forward and reverse indexes.
+# It will output a groupfile consisting of 2 columns: the header of the sequence and the sample it belongs to.
+# This group file can later be used in mothur or you can make separate files for each group.
+
 use strict; use warnings;
 use Getopt::Std;
 use Data::Dumper;
@@ -40,6 +46,20 @@ Options
 	-p:	Prefix for output file
 ";
 
+my $list_format = "
+A proper list file should be tab separated in this format:
+	
+Index1	Index2	Sample_Name
+
+For example:
+	
+	AACGCACGCTAG    CTAGCGTGCGTT    B1-T-Nip-BF
+	AACGCACGCTAG    CATGAACAGTGT    B1-T-Nip-Endo
+	AACGCACGCTAG    GCATCGTCTGGT    B1-T-IR50-1mm
+	AACGCACGCTAG    ATCCATGAGCGT    B1-T-IR50-BF
+	AACGCACGCTAG    CATACCGTGAGT    B1-T-IR50-Endo
+	AACGCACGCTAG    GTCTGACGGTCT    B1-T-Katy-1mm
+";
 
 #==============================================================================
 ## Make sure everything on the command line is kosher and open the files
